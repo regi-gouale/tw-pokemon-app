@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgSwitch, NgSwitchDefault, NgSwitchCase } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
