@@ -11,7 +11,7 @@ export class BorderCardDirective {
 
   constructor(private elementRef: ElementRef) {
     this.setHeight(this.defaultHeight);
-   }
+  }
 
   @Input('appBorderCard')
   borderColor!: string;

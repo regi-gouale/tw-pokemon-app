@@ -1,0 +1,28 @@
+<div class="container mx-auto">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8 lg:gap-16 w-full m-4">
+        <!-- <app-search-pokemon></app-search-pokemon> -->
+        <div class="items-center bg-gray-100" *ngFor="let pokemon of pokemons">
+            <div (click)="goToPokemonDetail(pokemon)" class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img src="{{ pokemon.picture }}" class="w-full">
+                <div class="px-4 py-4 center">
+                    <p class="font-bold text-center text-xl mb-2">{{ pokemon.name }}</p>
+                    <p class="text-gray-700 text-center text-base"><small>{{ pokemon.created | date:"dd MMM yyyy"
+                            }}</small></p>
+                    <div class="text-center">
+                        <div *ngFor="let type of pokemon.types"
+                            class="inline-flex items-center text-sm rounded mt-2 mr-1 overflow-hidden">
+                            <span class="{{ type | pokemonTypeColor }}">
+                                {{ type }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fixed bottom-8 right-8">
+    <button class="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+        <a routerLink="/add/pokemon">Ajouter</a>
+    </button>
+</div>
