@@ -5,6 +5,7 @@ import { PokemonService } from '../pokemon.service';
 import { DatePipe, NgFor, UpperCasePipe } from '@angular/common';
 import { BorderCardDirective } from '../border-card.directive';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
+import { HeaderPokemonComponent } from '../header-pokemon/header-pokemon.component';
 
 @Component({
   selector: 'app-list-pokemon',
@@ -16,7 +17,8 @@ import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
     RouterLink,
     UpperCasePipe,
     DatePipe,
-    PokemonTypeColorPipe
+    PokemonTypeColorPipe,
+    HeaderPokemonComponent
   ]
 })
 export class ListPokemonComponent implements OnInit {
