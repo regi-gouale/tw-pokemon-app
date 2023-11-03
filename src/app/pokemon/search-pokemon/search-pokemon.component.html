@@ -1,14 +1,14 @@
-<div class="relative flex mx-auto text-gray-600 lg:block hidden p-4 mx-auto">
-    <input #searchBox class="border-2 border-gray-300 bg-white h-10 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
+<div class="relative flex mx-auto text-gray-600 lg:block hidden p-4 mr-10">
+    <input #searchBox class="border-2 border-gray-300 bg-white h-8 pl-2 pr-8 rounded-lg text-sm focus:outline-none"
         (keyup)="search(searchBox.value)" type="search" name="search" placeholder="Rechercher">
 
         <div class="max-w-xs flex flex-col">
-            <a *ngFor="let pokemon of pokemons$ | async" (click)="goToDetail(pokemon)" class="inline-flex items-center gap-x-3.5 py-3 px-4 text-sm font-medium border text-blue-600 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-gray-700">
+            <a *ngFor="let pokemon of pokemons$ | async" (click)="goToDetail(pokemon)" class="inline-flex items-center gap-x-3.5 py-3 px-4 bg-white text-sm font-medium border text-blue-600 -mt-px first:rounded-t-lg first:mt-0 last:rounded-b-lg focus:z-10 focus:outline-none focus:ring-2 focus:ring-blue-600 dark:border-gray-700">
                 {{pokemon.name}}
             </a>
           </div>
 
-    <button type="submit" class="absolute right-0 top-0 mt-3 mr-2 p-4">
+    <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 p-4">
         <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" version="1.1" id="Capa_1"
             x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
             xml:space="preserve" width="512px" height="512px">

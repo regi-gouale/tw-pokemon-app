@@ -70,7 +70,7 @@ export class PokemonTypeColorPipe implements PipeTransform {
         color = 'bg-gray-300 text-gray-700';
         break;
     }
-    return `center relative inline-block select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none ${color}`;
+    return `center inline-block select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none ${color}`;
   }
 
 }
