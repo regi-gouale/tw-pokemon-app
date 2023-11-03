@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { Router, RouterLink } from '@angular/router';
 import { PokemonService } from '../pokemon.service';
-import { DatePipe, NgFor, UpperCasePipe } from '@angular/common';
+import { DatePipe, NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { BorderCardDirective } from '../border-card.directive';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 import { HeaderPokemonComponent } from '../header-pokemon/header-pokemon.component';
+import { LoaderComponent } from 'src/app/core/loader/loader.component';
 
 @Component({
   selector: 'app-list-pokemon',
@@ -13,12 +14,14 @@ import { HeaderPokemonComponent } from '../header-pokemon/header-pokemon.compone
   standalone: true,
   imports: [
     NgFor,
+    NgIf,
     BorderCardDirective,
     RouterLink,
     UpperCasePipe,
     DatePipe,
     PokemonTypeColorPipe,
-    HeaderPokemonComponent
+    HeaderPokemonComponent,
+    LoaderComponent
   ]
 })
 export class ListPokemonComponent implements OnInit {

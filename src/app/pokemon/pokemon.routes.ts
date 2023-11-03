@@ -23,11 +23,11 @@ export default [{
             loadComponent: () => import('./list-pokemon/list-pokemon.component')
                 .then(m => m.ListPokemonComponent),
         },
-        // {
-        //     path: 'pokemon/:id',
-        //     loadComponent: () => import('./detail-pokemon/detail-pokemon.component')
-        //         .then(m => m.DetailPokemonComponent),
-        //     canActivate: [authGuard]
-        // },
+        {
+            path: 'pokemon/:id',
+            loadComponent: () => import('./detail-pokemon/detail-pokemon.component')
+                .then(m => m.DetailPokemonComponent),
+            // canActivate: [authGuard]
+        },
     ]
 }] as Routes;
