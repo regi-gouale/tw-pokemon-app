@@ -40,7 +40,8 @@
         </table>
     </div>
     <footer class="text-center py-3 px-8 text-gray-500 mx-auto flex flex-row justify-between">
-        <button class="py-2 px-4 mt-5 bg-gray-50 rounded-lg text-sm font-medium text-gray-900 border font-semibold hover:bg-gray-600 hover:text-white"
+        <button
+            class="py-2 px-4 mt-5 bg-gray-50 rounded-lg text-sm font-medium text-gray-900 border font-semibold hover:bg-gray-600 hover:text-white"
             (click)="goToPokemonList()">
             Retour
         </button>
@@ -55,50 +56,6 @@
     </footer>
 </div>
 
-<!-- <div class="flex flex-col bg-white border shadow-sm rounded-xl" *ngIf="pokemon">
-    <div class="grid grid-cols-1 w-full gap-4 m-4">
-        <div class="p-4 md:p-5">
-            <h1 class="text-lg font-bold font-size-xl text-gray-800">{{pokemon.name}}</h1>
-        </div>
-        <img class="w-full h-auto rounded-t-xl" src="{{pokemon.picture}}">
-        <div class="card-stacked">
-            <div class="card-content">
-                <table class="bordered striped">
-                    <tbody>
-                        <tr>
-                            <td>Nom</td>
-                            <td><strong>{{ pokemon.name }}</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Points de vie</td>
-                            <td><strong>{{ pokemon.hp }}</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Dégâts</td>
-                            <td><strong>{{ pokemon.cp }}</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Types</td>
-                            <td>
-                                <span *ngFor="let type of pokemon.types" class="{{ type | pokemonTypeColor }}">{{
-                                    type }}</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Date de création</td>
-                            <td><em>{{ pokemon.created | date:"dd/MM/yyyy" }}</em></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-action">
-                <a (click)="goToPokemonList()">Retour</a>
-                <a (click)="goToEditPokemon()">Modifier</a>
-                <a (click)="deletePokemon()">Supprimer</a>
-            </div>
-        </div>
-    </div>
-</div> -->
 <h4 *ngIf='!pokemon' class="center">
     <app-loader></app-loader>
 </h4>

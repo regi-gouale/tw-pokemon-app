@@ -82,7 +82,7 @@ export class PokemonService {
     return of(errorValue);
   };
 
-  getPokemonTypeList(): string[] {
+  getPokemonTypes(): string[] {
     return [
       'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
       'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
