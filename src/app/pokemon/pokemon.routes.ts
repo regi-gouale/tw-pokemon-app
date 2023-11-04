@@ -12,12 +12,12 @@ export default [{
         //         .then(m => m.EditPokemonComponent),
         //     canActivate: [authGuard]
         // },
-        // {
-        //     path: 'add/pokemon',
-        //     loadComponent: () => import('./add-pokemon/add-pokemon.component')
-        //         .then(m => m.AddPokemonComponent),
-        //     canActivate: [authGuard]
-        // },
+        {
+            path: 'add/pokemon',
+            loadComponent: () => import('./add-pokemon/add-pokemon.component')
+                .then(m => m.AddPokemonComponent),
+            // canActivate: [authGuard]
+        },
         {
             path: 'pokemons',
             loadComponent: () => import('./list-pokemon/list-pokemon.component')
