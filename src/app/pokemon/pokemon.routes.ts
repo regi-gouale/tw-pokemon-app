@@ -6,12 +6,12 @@ export default [{
     path: '',
     providers: [PokemonService],
     children: [
-        // {
-        //     path: 'edit/pokemon/:id',
-        //     loadComponent: () => import('./edit-pokemon/edit-pokemon.component')
-        //         .then(m => m.EditPokemonComponent),
-        //     canActivate: [authGuard]
-        // },
+        {
+            path: 'edit/pokemon/:id',
+            loadComponent: () => import('./edit-pokemon/edit-pokemon.component')
+                .then(m => m.EditPokemonComponent),
+            // canActivate: [authGuard]
+        },
         {
             path: 'add/pokemon',
             loadComponent: () => import('./add-pokemon/add-pokemon.component')
