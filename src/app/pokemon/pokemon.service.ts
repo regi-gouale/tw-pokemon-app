@@ -15,9 +15,7 @@ export class PokemonService {
       .get<Pokemon[]>('api/pokemons')
       .pipe(
         tap(pokemonList => {
-          for (let pokemon of pokemonList) {
-            // this.log(pokemon);
-          }
+          this.log(pokemonList[0]);
         }),
         catchError(
           (error) => this.handleError(error, []))
@@ -66,17 +64,23 @@ export class PokemonService {
 
   searchPokemonList(term: string): Observable<Pokemon[]> {
     if (!term.trim()) {
+      console.log('term is empty');
       return of([]);
     }
-    return this.httpClient.get<Pokemon[]>(`api/pokemons/?name=${term}`).pipe(
-      tap(pokemonList => this.log(pokemonList)),
+    // const options = {
+    //   params: { name[fr]: term }
+    // };
+    return this.httpClient.get<Pokemon[]>(`api/pokemons/?name.fr=${term}`).pipe(
+      tap(pokemonList => {
+        this.log(pokemonList);
+      }),
       catchError(
         (error) => this.handleError(error, []))
     );
   }
 
   private log(response: any): void {
-    console.table(response);
+    console.log(response);
   }
 
   private handleError(error: Error, errorValue: any) {
@@ -86,9 +90,6 @@ export class PokemonService {
 
   getPokemonTypes(): PokemonType[] {
     return [
-
-      // 'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
-      // 'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
       {
         name: 'Plante',
         image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/plante.png"

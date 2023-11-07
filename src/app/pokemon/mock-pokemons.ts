@@ -6,33 +6,6 @@ function randomDate(start: Date, end: Date): Date {
 
 export const POKEMONS: Pokemon[] = [
     {
-        id: 0,
-        generation: 1,
-        category: "Pok\u00e9mon Bug",
-        name: {
-            fr: "MissingNo.",
-            en: "MissingNo.",
-            jp: "\u30ad\u30e3\u30bf\u30d4\u30fc"
-        },
-        sprites: {
-            regular: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/sprites/0/regular.png",
-            shiny: null,
-
-        },
-        types: null,
-        talents: null,
-        stats: null,
-        resistances: null,
-        evolution: null,
-        height: '',
-        weight: '',
-        eggGroups: null,
-        sex: null,
-        catchRate: null,
-        levelingRate: null,
-        forme: null, created: randomDate(new Date(1996, 0, 1), new Date()),
-    },
-    {
         id: 1,
         generation: 1,
         category: "Pok\u00e9mon Graine",
