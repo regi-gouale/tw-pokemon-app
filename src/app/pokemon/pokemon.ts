@@ -21,23 +21,15 @@ export class Pokemon {
         public weight: string = "0.0 kg",
         public eggGroups: Array<string> | null = null,
         public sex: {} | null = null,
-        public catchRate: number = 0,
-        public levelingRate: number = 0,
-        public forme: string | null= "Normal",
+        public catchRate: number | null = 0,
+        public levelingRate: number | null = 0,
+        public forme: Array<{}> | null= null,
         // public hp: number = 10,
         // public cp: number = 5,
         // public picture: string = 'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/XXX.png',
         
         public created: Date = new Date()
     ) {
-        // this.id = id;
-        this.generation = generation;
-        this.category = category;
-        this.name = name;
-        this.sprites = sprites;
-        this.types = types;
-        this.talents = talents;
-        this.created = created;
     }
 };
 
@@ -79,7 +71,7 @@ export interface PokemonResistance {
 export interface PokemonEvolution {
     pre: Array<PokemonTree> | null;
     next: Array<PokemonTree> | null;
-    mega: PokemonMega | null;
+    mega: PokemonMega[] | null;
 }
 
 export interface PokemonTree {
