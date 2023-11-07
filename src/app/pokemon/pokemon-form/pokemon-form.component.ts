@@ -5,6 +5,7 @@ import { LoaderComponent } from 'src/app/core/loader/loader.component';
 import { NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
+import { PokemonType } from '../pokemon';
 
 @Component({
   selector: 'app-pokemon-form',
@@ -21,7 +22,7 @@ import { PokemonTypeColorPipe } from '../pokemon-type-color.pipe';
 })
 export class PokemonFormComponent implements OnInit {
   @Input() pokemon: any;
-  types: string[] = [];
+  types: PokemonType[] = [];
   isAddForm: boolean = false;
 
   constructor(
@@ -34,11 +35,17 @@ export class PokemonFormComponent implements OnInit {
     this.isAddForm = this.router.url.includes('add');
   }
 
-  hasType(type: string): boolean {
-    return this.pokemon.types.includes(type);
+  hasType(type: PokemonType): boolean {
+    const found = this.pokemon.types.find(
+      (pokemonType: PokemonType) => {
+        return pokemonType.name === type.name;
+      });
+
+    return found !== undefined;
+
   }
 
-  selectType($event: Event, type: string) {
+  selectType($event: Event, type: PokemonType) {
     const checked = ($event.target as HTMLInputElement).checked;
     if (checked) {
       this.pokemon.types.push(type);
@@ -70,7 +77,7 @@ export class PokemonFormComponent implements OnInit {
       .subscribe(() => this.router.navigate(['/pokemon', this.pokemon.id]));
   }
 
-  isTypesValid(type: string): boolean {
+  isTypesValid(type: PokemonType): boolean {
     if (this.pokemon.types.length === 1 && this.hasType(type)) {
       return false;
     }

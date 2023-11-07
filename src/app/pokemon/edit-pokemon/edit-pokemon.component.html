@@ -6,8 +6,8 @@
         </a>
     </div>
 </nav>
-<h2 class="text-5xl mx-auto my-4 text-center">Modifier {{pokemon?.name}}</h2>
+<h2 class="text-5xl mx-auto my-4 text-center">Modifier {{pokemon?.name?.fr}}</h2>
 <div *ngIf="pokemon" class="w-full rounded-lg shadow-xl bg-white p-4 mx-auto my-8">
-    <img [src]="pokemon.picture" [alt]="pokemon.name" class="rounded-full py-2 h-50 mx-auto">
+    <img [src]="pokemon.sprites.regular" [alt]="pokemon.name.fr" class="rounded-full py-2 h-50 mx-auto">
     <app-pokemon-form *ngIf="pokemon" [pokemon]="pokemon"></app-pokemon-form>
 </div>

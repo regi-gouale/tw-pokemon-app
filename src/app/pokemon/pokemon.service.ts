@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap, catchError, of } from 'rxjs';
-import { Pokemon } from './pokemon';
+import { Pokemon, PokemonType } from './pokemon';
 
 @Injectable()
 export class PokemonService {
@@ -16,7 +16,7 @@ export class PokemonService {
       .pipe(
         tap(pokemonList => {
           for (let pokemon of pokemonList) {
-            this.log(pokemon);
+            // this.log(pokemon);
           }
         }),
         catchError(
@@ -26,7 +26,9 @@ export class PokemonService {
 
   getPokemonById(id: number): Observable<Pokemon | undefined> {
     return this.httpClient.get<Pokemon>(`api/pokemons/${id}`).pipe(
-      tap(pokemon => this.log(pokemon)),
+      tap(pokemon => {
+        // this.log(pokemon);
+      }),
       catchError(
         (error) => this.handleError(error, undefined))
     );
@@ -82,10 +84,55 @@ export class PokemonService {
     return of(errorValue);
   };
 
-  getPokemonTypes(): string[] {
+  getPokemonTypes(): PokemonType[] {
     return [
-      'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
-      'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
+
+      // 'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
+      // 'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
+      {
+        name: 'Plante',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/plante.png"
+      },
+      {
+        name: 'Feu',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/feu.png"
+      },
+      {
+        name: 'Eau',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/eau.png"
+      },
+      {
+        name: 'Insecte',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/insecte.png"
+      },
+      {
+        name: 'Normal',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/normal.png"
+      },
+      {
+        name: 'Electrik',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/electrik.png"
+      },
+      {
+        name: 'Poison',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/poison.png"
+      },
+      {
+        name: 'Fée',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/fee.png"
+      },
+      {
+        name: 'Vol',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/vol.png"
+      },
+      {
+        name: 'Combat',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/combat.png"
+      },
+      {
+        name: 'Psy',
+        image: "https://raw.githubusercontent.com/Yarkis01/PokeAPI/images/types/psy.png"
+      },
     ];
   }
 }

@@ -8,27 +8,27 @@
 </nav>
 <div class="w-2/3 rounded-lg shadow-xl bg-white p-10 mx-auto my-8" *ngIf="pokemon">
     <header class="text-5xl font-extrabold p-4 text-center">
-        {{pokemon.name}}
+        {{pokemon.name.fr}}
     </header>
-    <img src="{{pokemon.picture}}" alt="{{pokemon.name}}" class="rounded-full p-4 h-50 mx-auto" />
+    <img src="{{pokemon.sprites['regular']}}" alt="{{pokemon.name.fr}}" class="rounded-full p-4 h-50 mx-auto" />
     <div>
         <p class="text-2xl font-bold p-2 text-center text-gray-300">Caractéristiques</p>
         <table class="w-full text-sm text-left text-gray-500 p-4 my-8">
             <tbody>
                 <tr class="bg-white border-b">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Points de vie</th>
-                    <td class="px-6 py-4">{{pokemon.hp}}</td>
+                    <td class="px-6 py-4">{{pokemon.stats?.hp}}</td>
                 </tr>
                 <tr class="border-b bg-gray-50">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Dégâts</th>
-                    <td class="px-6 py-4">{{pokemon.cp}}</td>
+                    <td class="px-6 py-4">{{pokemon.stats?.atk}}</td>
                 </tr>
                 <tr class="border-b bg-white">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">Types</th>
                     <td class="px-6 py-4">
                         <span *ngFor="let type of pokemon.types"
-                            class="inline-flex items-center text-sm rounded mt-2 mr-1 overflow-hidden {{ type | pokemonTypeColor }}">
-                            {{type}}
+                            class="inline-flex items-center text-sm rounded mt-2 mr-1 overflow-hidden {{ type.name| pokemonTypeColor }}">
+                            {{type.name}}
                         </span>
                     </td>
                 </tr>
